@@ -1,0 +1,16 @@
+PODS:
+  - ColaExpression (1.0.0)
+
+DEPENDENCIES:
+  - ColaExpression (from `../`)
+
+EXTERNAL SOURCES:
+  ColaExpression:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  ColaExpression: 8d22420f534b430004df9737959974591f3fc6c2
+
+PODFILE CHECKSUM: 5c0e88a65f8e887c982e6763a3f8553c3111a461
+
+COCOAPODS: 1.2.1

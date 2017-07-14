@@ -1,0 +1,6 @@
+framework module Pods_ColaExpressionSample {
+  umbrella header "Pods-ColaExpressionSample-umbrella.h"
+
+  export *
+  module * { export * }
+}

@@ -1,0 +1,8 @@
+platform :ios, '9.0'
+
+target 'ColaExpressionSample' do
+  use_frameworks!
+
+  pod 'ColaExpression', :path => '../'
+
+end

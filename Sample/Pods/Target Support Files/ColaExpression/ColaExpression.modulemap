@@ -1,0 +1,6 @@
+framework module ColaExpression {
+  umbrella header "ColaExpression-umbrella.h"
+
+  export *
+  module * { export * }
+}
