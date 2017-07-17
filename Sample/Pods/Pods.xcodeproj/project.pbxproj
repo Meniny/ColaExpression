@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		54BF084BE17B3989BA267D5A78043930 /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8086F9102F7802A4139EF79C728D003F /* String+Extension.swift */; };
-		6641A8018FBC4B9126D792E47E945379 /* NSRange_Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4145A20F81E41FEE85B673462EF0E98C /* NSRange_Extension.swift */; };
+		6641A8018FBC4B9126D792E47E945379 /* NSRange+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4145A20F81E41FEE85B673462EF0E98C /* NSRange+Extension.swift */; };
 		78EEF0D871BACA2D452E04D013BF1764 /* ColaExpression-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 25FD4419BED7F58F1CEFCD40B51C68AB /* ColaExpression-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		9BE84AD7B2BCD4140099C906D1B03169 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */; };
 		B00FA39722609DEB5B4DEBEA7BC01BED /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */; };
@@ -32,23 +32,23 @@
 /* Begin PBXFileReference section */
 		0A4D8077040CA73CE61F0D34E01D13A4 /* Pods-ColaExpressionSample-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-ColaExpressionSample-dummy.m"; sourceTree = "<group>"; };
 		0C9823091BD953B8432EDD60A5270AC1 /* Pods-ColaExpressionSample-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-ColaExpressionSample-umbrella.h"; sourceTree = "<group>"; };
-		129D424A2BCC5B0CE30C570FC00961EA /* ColaExpression.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = ColaExpression.framework; path = ColaExpression.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		1693227666760D88AB3A005CA0D19C47 /* ColaExpression.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = ColaExpression.modulemap; sourceTree = "<group>"; };
+		129D424A2BCC5B0CE30C570FC00961EA /* ColaExpression.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ColaExpression.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		1693227666760D88AB3A005CA0D19C47 /* ColaExpression.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = ColaExpression.modulemap; sourceTree = "<group>"; };
 		21DCE9397D6ED12968DAC13BE1FF6488 /* Pods-ColaExpressionSample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-ColaExpressionSample.debug.xcconfig"; sourceTree = "<group>"; };
 		23C8F6DF0801B55F70812BE215101BDB /* ColaExpression.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = ColaExpression.xcconfig; sourceTree = "<group>"; };
 		25FD4419BED7F58F1CEFCD40B51C68AB /* ColaExpression-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "ColaExpression-umbrella.h"; sourceTree = "<group>"; };
 		2C6AECDE69D23D3CAFD29534ED78ECDC /* Pods-ColaExpressionSample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-ColaExpressionSample.release.xcconfig"; sourceTree = "<group>"; };
-		3D9F3B3B7F338D3430E38068BCA45380 /* Pods-ColaExpressionSample.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-ColaExpressionSample.modulemap"; sourceTree = "<group>"; };
-		4145A20F81E41FEE85B673462EF0E98C /* NSRange_Extension.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = NSRange_Extension.swift; sourceTree = "<group>"; };
+		3D9F3B3B7F338D3430E38068BCA45380 /* Pods-ColaExpressionSample.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-ColaExpressionSample.modulemap"; sourceTree = "<group>"; };
+		4145A20F81E41FEE85B673462EF0E98C /* NSRange+Extension.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "NSRange+Extension.swift"; sourceTree = "<group>"; };
 		4B11390AC286271453F0462FD28A7E55 /* Pods-ColaExpressionSample-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-ColaExpressionSample-frameworks.sh"; sourceTree = "<group>"; };
 		4EA0E252B443D2951E2B73E020781A20 /* Pods-ColaExpressionSample-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-ColaExpressionSample-resources.sh"; sourceTree = "<group>"; };
 		50AD5355F42AFFDA4E72E5826FC51EF2 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		5BE4859A35E4032B7DF83EDB4FAACA5B /* Pods_ColaExpressionSample.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_ColaExpressionSample.framework; path = "Pods-ColaExpressionSample.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		5BE4859A35E4032B7DF83EDB4FAACA5B /* Pods_ColaExpressionSample.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ColaExpressionSample.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		8086F9102F7802A4139EF79C728D003F /* String+Extension.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
 		8209A1A1361892CE5A015D9D7B22A2B1 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		870138CB9CF90070A87EFA9FE5B6C49D /* ColaExpression-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "ColaExpression-prefix.pch"; sourceTree = "<group>"; };
-		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		A4EC609A7E9EAC7A8B26EBAFE3976967 /* Pods-ColaExpressionSample-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-ColaExpressionSample-acknowledgements.plist"; sourceTree = "<group>"; };
 		A9E227161A8F35491385F98541854A85 /* ColaExpression.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = ColaExpression.h; sourceTree = "<group>"; };
 		CBEB69F1CA02FF6BDF3BF507D6296C0C /* ColaExpression-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "ColaExpression-dummy.m"; sourceTree = "<group>"; };
@@ -141,10 +141,9 @@
 			children = (
 				A9E227161A8F35491385F98541854A85 /* ColaExpression.h */,
 				F4430E3C722CD59C4FE5BDBE2B0B4126 /* ColaExpression.swift */,
-				4145A20F81E41FEE85B673462EF0E98C /* NSRange_Extension.swift */,
+				4145A20F81E41FEE85B673462EF0E98C /* NSRange+Extension.swift */,
 				8086F9102F7802A4139EF79C728D003F /* String+Extension.swift */,
 			);
-			name = ColaExpression;
 			path = ColaExpression;
 			sourceTree = "<group>";
 		};
@@ -274,7 +273,7 @@
 			files = (
 				F714E41B978A418F0519D473D6B4B404 /* ColaExpression-dummy.m in Sources */,
 				EE5305BBB6CB46480272AA1B372D6F36 /* ColaExpression.swift in Sources */,
-				6641A8018FBC4B9126D792E47E945379 /* NSRange_Extension.swift in Sources */,
+				6641A8018FBC4B9126D792E47E945379 /* NSRange+Extension.swift in Sources */,
 				54BF084BE17B3989BA267D5A78043930 /* String+Extension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

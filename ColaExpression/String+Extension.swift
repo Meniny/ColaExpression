@@ -363,24 +363,24 @@ public extension String {
     /// Example 1:
     ///
     ///     let string = "Hello World"
-    ///     print(string.pad(length: 13))
+    ///     print(string.padding(length: 13))
     ///     // Prints " Hello World "
     ///
     /// Example 2:
     ///
     ///     let string = "Hello World"
-    ///     print(string.pad(length: 13, withToken: "*"))
+    ///     print(string.padding(length: 13, withToken: "*"))
     ///     // Prints "*Hello World*"
     ///
     /// - Parameters:
     ///   - length: The final length of your string. If the provided length is less than or equal to the original string, the original string is returned. If the the sum-total of characters added is odd, the left side of the string will have one less instance of the token.
     ///   - token: The string used to pad the String. Must be 1 character in length. Defaults to a white space if the parameter is left blank.
     /// - Returns: The padded copy of the string.
-    public func pad(length: Int, token: String = " ") -> String {
-        guard padConditionsSatisfied(tokenCount: token.characters.count, length: length) else { return self }
+    public func padding(length: Int, token: String = " ") -> String {
+        guard paddingConditionsSatisfied(tokenCount: token.characters.count, length: length) else { return self }
         
         let delta = Int(ceil(Double(length-self.length())/2))
-        return padLeft(length: length-delta, token: token).padRight(length: length, token: token)
+        return paddingLeft(length: length-delta, token: token).paddingRight(length: length, token: token)
     }
     
     /// Returns the left-padded version of the string.
@@ -388,13 +388,13 @@ public extension String {
     /// Example 1:
     ///
     ///     let string = "Hello World"
-    ///     print(string.padLeft(length: 13))
+    ///     print(string.paddingLeft(length: 13))
     ///     // Prints "  Hello World"
     ///
     /// Example 2:
     ///
     ///     let string = "Hello World"
-    ///     print(string.padLeft(length: 13, withToken: "*"))
+    ///     print(string.paddingLeft(length: 13, withToken: "*"))
     ///     // Prints "**Hello World"
     ///
     /// - Parameters:
@@ -403,8 +403,8 @@ public extension String {
     ///   - token: The string used to pad the String. Must be 1 character in length. Defaults to a white space if the parameter is left blank.
     /// - Returns: The left-padded copy of the string.
     @discardableResult
-    public func padLeft(length: Int, token: String = " ") -> String {
-        guard padConditionsSatisfied(tokenCount: token.characters.count, length: length) else { return self }
+    public func paddingLeft(length: Int, token: String = " ") -> String {
+        guard paddingConditionsSatisfied(tokenCount: token.characters.count, length: length) else { return self }
         
         var s = self
         repeat { s.insert(token.characters[token.startIndex], at: startIndex) } while s.characters.count < length
@@ -416,13 +416,13 @@ public extension String {
     /// Example 1:
     ///
     ///     let string = "Hello World"
-    ///     print(string.padRight(length: 13))
+    ///     print(string.paddingRight(length: 13))
     ///     // Prints "Hello World  "
     ///
     /// Example 2:
     ///
     ///     let string = "Hello World"
-    ///     print(string.padRight(length: 13, withToken: "*", ))
+    ///     print(string.paddingRight(length: 13, withToken: "*", ))
     ///     // Prints "Hello World**"
     ///
     /// - Parameters:
@@ -430,8 +430,8 @@ public extension String {
     ///   - token: The string used to pad the String. Must be 1 character in length. Defaults to a white space if the parameter is left blank.
     /// - Returns: The right-padded copy of the string.
     @discardableResult
-    public func padRight(length: Int, token: String = " ") -> String {
-        guard padConditionsSatisfied(tokenCount: token.characters.count, length: length) else { return self }
+    public func paddingRight(length: Int, token: String = " ") -> String {
+        guard paddingConditionsSatisfied(tokenCount: token.characters.count, length: length) else { return self }
         
         var s = self
         repeat { s.insert(token.characters[token.startIndex], at: endIndex) } while s.characters.count < length
@@ -448,7 +448,7 @@ public extension String {
     ///   - token: The token that will be used for padding.
     ///   - length: The final length of the string.
     /// - Returns: True, if the string can be padded. Otherise, false.
-    public func padConditionsSatisfied(tokenCount: Int, length: Int) -> Bool {
+    public func paddingConditionsSatisfied(tokenCount: Int, length: Int) -> Bool {
         guard length > characters.count, tokenCount == 1 else {
             return false
         }

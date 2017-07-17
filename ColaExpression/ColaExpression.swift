@@ -20,9 +20,9 @@ public struct ColaExpression {
     /// Regular expression pattern that will be used to evaluate a specific string.
     public let pattern: ColaExpression.Pattern
 
-    /// `fatalError` occurs when using this empty initializer as ColaExpression must be initialized using `init(_ pattern:)`.
+    /// `fatalError` occurs when using this empty initializer as ColaExpression must be initialized using `init(_ pattern:)` or `init(pattern:)`.
     public init() {
-        fatalError("ColaExpression must be initialized using `init(_ pattern:)`.")
+        fatalError("ColaExpression must be initialized using `init(_ pattern:)` or `init(pattern:)`.")
 //        self.pattern = "."
     }
 
@@ -34,6 +34,13 @@ public struct ColaExpression {
         self.pattern = pattern
     }
     
+    /// Designated Initializer for `ColaExpression`
+    ///
+    /// - Parameters:
+    ///     - pattern: The pattern that will be used to perform the match.
+    public init(pattern: ColaExpression.Pattern) {
+        self.pattern = pattern
+    }
 }
 
 /// Type alias of `ColaExpression`
