@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="./ColaExpression.png" alt="ColaExpression">
+  <img src="https://i.loli.net/2017/08/03/5982cf95ad718.png" alt="ColaExpression">
   <br/><a href="https://cocoapods.org/pods/ColaExpression">
   <img alt="Version" src="https://img.shields.io/badge/version-1.0.1-brightgreen.svg">
   <img alt="Author" src="https://img.shields.io/badge/author-Meniny-blue.svg">

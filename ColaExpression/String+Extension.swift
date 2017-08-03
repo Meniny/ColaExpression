@@ -16,7 +16,7 @@ public extension String {
     ///
     /// - Parameter pattern: ColaExpression pattern
     /// - Returns: `true`, if matches. Otherwise, `false`.
-    public func isMatch(pattern: ColaExpression.Pattern, options: ColaExpression.Options = []) -> Bool {
+    public func isMatch(pattern: Pattern, options: ColaOptions = []) -> Bool {
         return ColaExpression(pattern).isMatch(with: self, options: options)
     }
     
@@ -95,7 +95,7 @@ public extension String {
     ///     - options: Regular expression options that are applied to the string during matching. Defaults to [].
     ///
     /// - Returns: A list of matches.
-    public func matches(pattern: ColaExpression.Pattern, options: ColaExpression.Options = []) -> [String] {
+    public func matches(pattern: Pattern, options: ColaOptions = []) -> [String] {
         return ColaExpression(pattern).matches(of: self, options: options)
     }
     
@@ -106,7 +106,7 @@ public extension String {
     ///     - options: Regular expression options that are applied to the string during matching. Defaults to [].
     ///
     /// - Returns: A list of matches.
-    public func matchedRanges(with pattern: ColaExpression.Pattern, options: ColaExpression.Options = []) -> [Range<String.Index>] {
+    public func matchedRanges(with pattern: Pattern, options: ColaOptions = []) -> [Range<String.Index>] {
         return ColaExpression(pattern).matchedRanges(of: self, options: options)
     }
 }
@@ -348,7 +348,7 @@ public extension String {
     ///   - string: The string that will be manipulated.
     ///   - character: The character that is injected in certain ranges within the original string.
     /// - Returns: A new string based on the old string, but with specific ranges containing a different character.
-    public func replaceOccurences(matches pattern: ColaExpression.Pattern, with character: String) -> String {
+    public func replaceOccurences(matches pattern: Pattern, with character: String) -> String {
         return ColaExpression(pattern).replaceOccurences(in: self, with: character)
     }
     

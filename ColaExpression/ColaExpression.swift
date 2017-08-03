@@ -12,13 +12,8 @@ import Foundation
 
 public struct ColaExpression {
     
-    /// Type alias of `String`
-    public typealias Pattern = String
-    /// Type alias of `NSRegularExpression.Options`
-    public typealias Options = NSRegularExpression.Options
-    
     /// Regular expression pattern that will be used to evaluate a specific string.
-    public let pattern: ColaExpression.Pattern
+    public let pattern: Pattern
 
     /// `fatalError` occurs when using this empty initializer as ColaExpression must be initialized using `init(_ pattern:)` or `init(pattern:)`.
     public init() {
@@ -30,7 +25,7 @@ public struct ColaExpression {
     ///
     /// - Parameters:
     ///     - pattern: The pattern that will be used to perform the match.
-    public init(_ pattern: ColaExpression.Pattern) {
+    public init(_ pattern: Pattern) {
         self.pattern = pattern
     }
     
@@ -38,17 +33,10 @@ public struct ColaExpression {
     ///
     /// - Parameters:
     ///     - pattern: The pattern that will be used to perform the match.
-    public init(pattern: ColaExpression.Pattern) {
+    public init(pattern: Pattern) {
         self.pattern = pattern
     }
 }
-
-/// Type alias of `ColaExpression`
-public typealias Cola = ColaExpression
-/// Type alias of `ColaExpression`
-public typealias RegEx = ColaExpression
-/// Type alias of `ColaExpression`
-public typealias ColaEx = ColaExpression
 
 // MARK: - Match
 
@@ -61,7 +49,7 @@ public extension ColaExpression {
     ///     - options: Regular expression options that are applied to the string during matching. Defaults to [].
     ///
     /// - Returns: A list of matches.
-    public func matchedRanges(of string: String, options: ColaExpression.Options = []) -> [Range<String.Index>] {
+    public func matchedRanges(of string: String, options: ColaOptions = []) -> [Range<String.Index>] {
         let range = NSRange(location: 0, length: string.characters.count)
         guard let regex = try? NSRegularExpression(pattern: pattern, options: options) else {
             return []
@@ -84,7 +72,7 @@ public extension ColaExpression {
     ///     - options: Regular expression options that are applied to the string during matching. Defaults to [].
     ///
     /// - Returns: A list of matches.
-    public func matches(of string: String, options: ColaExpression.Options = []) -> [String] {
+    public func matches(of string: String, options: ColaOptions = []) -> [String] {
         let ranges = matchedRanges(of: string)
 
         var strings: [String] = []
@@ -102,7 +90,7 @@ public extension ColaExpression {
     ///     - options: Regular expression options that are applied to the string during matching. Defaults to [].
     /// 
     /// - Returns: `true` if string passes the test, otherwise, `false`.
-    public func isMatch(with string: String, options: ColaExpression.Options = []) -> Bool {
+    public func isMatch(with string: String, options: ColaOptions = []) -> Bool {
         return matchedRanges(of: string, options: options).count > 0
     }
 
@@ -157,24 +145,4 @@ public extension ColaExpression {
         return ColaExpression.nonAlphanumericPattern.replaceOccurences(in: string, with: " ").trimmingCharacters(in: .whitespacesAndNewlines)
     }
     
-}
-
-// MARK: - Common Patterns
-
-public extension ColaExpression {
-    
-    /// Pattern matches email addresses.
-    public static let emailPattern = ColaExpression("[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,6}")
-    
-    /// Pattern matches first alphanumeric character of each word.
-    public static let firstCharacterPattern = ColaExpression("(\\b\\w|(?<=_)[^_])")
-        
-    /// Pattern matches last alphanumeric character of each word.
-    public static let lastCharacterPattern = ColaExpression("(\\w\\b|[^_](?=_))")
-    
-    /// Pattern matches non-Alphanumeric characters.
-    public static let nonAlphanumericPattern = ColaExpression("[^a-zA-Z\\d]")
-    
-    /// Pattern matches non-Alphanumeric and non-Whitespace characters.
-    public static let nonAlphanumericSpacePattern = ColaExpression("[^a-zA-Z\\d\\s]")
 }

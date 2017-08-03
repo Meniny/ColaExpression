@@ -1,5 +1,5 @@
 PODS:
-  - ColaExpression (1.0.0)
+  - ColaExpression (1.0.2)
 
 DEPENDENCIES:
   - ColaExpression (from `../`)
@@ -9,7 +9,7 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  ColaExpression: 8d22420f534b430004df9737959974591f3fc6c2
+  ColaExpression: c6d25f4d2bd6dc9ba827da267625d39c5e3d5af4
 
 PODFILE CHECKSUM: 5c0e88a65f8e887c982e6763a3f8553c3111a461
 

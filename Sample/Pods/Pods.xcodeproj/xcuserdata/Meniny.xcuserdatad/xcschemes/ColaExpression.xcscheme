@@ -14,7 +14,7 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = '81E6E4C206CFC470DEB2641DE18CD99B'
+               BlueprintIdentifier = '5030CF6CEF2B89E7DC510E78C258C29B'
                BlueprintName = 'ColaExpression'
                ReferencedContainer = 'container:Pods.xcodeproj'
                BuildableName = 'ColaExpression.framework'>
