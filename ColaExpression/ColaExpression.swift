@@ -82,6 +82,17 @@ public extension ColaExpression {
 
         return strings
     }
+    
+    /// Evaluates a string for all instances of a regular expression pattern and returns the first of value of the list of matched strings for that string.
+    ///
+    /// - Parameters:
+    ///     - string: The string that will be evaluated.
+    ///     - options: Regular expression options that are applied to the string during matching. Defaults to [].
+    ///
+    /// - Returns: The first value of the list of matches.
+    public func firstMatch(of string: String, options: ColaOptions = []) -> String? {
+        return matches(of: string, options: options).first
+    }
 
     /// Tests a string to see if it matches the regular expression pattern.
     ///
@@ -91,7 +102,7 @@ public extension ColaExpression {
     /// 
     /// - Returns: `true` if string passes the test, otherwise, `false`.
     public func isMatch(with string: String, options: ColaOptions = []) -> Bool {
-        return matchedRanges(of: string, options: options).count > 0
+        return !matchedRanges(of: string, options: options).isEmpty
     }
 
     /// Replace specific ranges in a string with a specific character.

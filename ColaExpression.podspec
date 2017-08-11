@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = "ColaExpression"
-  s.version          = "1.0.2"
+  s.version          = "1.1.0"
   s.summary          = "A Cross-Platform Regular Expression Library written in Swift."
   s.description      = <<-DESC
                         ColaExpression is a Cross-Platform Regular Expression Library written in Swift.
