@@ -36,12 +36,38 @@ public struct ColaExpression {
     public init(pattern: Pattern) {
         self.pattern = pattern
     }
+    
+//    public private(set) var expression: NSRegularExpression?
 }
 
 // MARK: - Match
 
 public extension ColaExpression {
 
+    /// Evaluates a string for all instances of a regular expression pattern and returns a new string of matches repleaced.
+    ///
+    /// - Parameters:
+    ///   - string: The string that will be evaluated.
+    ///   - options: Regular expression options that are applied to the string during matching. Defaults to [].
+    ///   - matchingOptions: Matching options. Defaults to [].
+    ///   - range: Range. Defaults to `nil`.
+    ///   - templ: Template. Defaults to an empty string(`""`).
+    /// - Returns: A new string with all matches repleaced.
+    public func stringByReplacingMatches(in string: String,
+                                         options: ColaOptions = [],
+                                         matchingOptions: ColaMatchingOptions = [],
+                                         range: NSRange? = nil,
+                                         withTemplate templ: String = "") -> String {
+        guard let regex = try? NSRegularExpression(pattern: pattern, options: options) else {
+            return string
+        }
+        
+        return regex.stringByReplacingMatches(in: string,
+                                              options: matchingOptions,
+                                              range: range ?? NSMakeRange(0, string.characters.count),
+                                              withTemplate: templ)
+    }
+    
     /// Evaluates a string for all instances of a regular expression pattern and returns a list of matched ranges for that string.
     ///
     /// - Parameters:

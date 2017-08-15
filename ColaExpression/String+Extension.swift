@@ -120,6 +120,27 @@ public extension String {
     public func matchedRanges(with pattern: Pattern, options: ColaOptions = []) -> [Range<String.Index>] {
         return ColaExpression(pattern).matchedRanges(of: self, options: options)
     }
+    
+    /// Evaluates this string for all instances of a regular expression pattern and returns a new string of all matches repleaced.
+    ///
+    /// - Parameters:
+    ///   - pattern: A regular expression pattern
+    ///   - options: Regular expression options that are applied to the string during matching. Defaults to [].
+    ///   - matchingOptions: Matching options. Defaults to [].
+    ///   - range: Range. Defaults to `nil`.
+    ///   - templ: Template. Defaults to an empty string(`""`).
+    /// - Returns: A new string with all matches repleaced.
+    public func stringByReplacingMatches(with pattern: Pattern,
+                                         options: ColaOptions = [],
+                                         matchingOptions: ColaMatchingOptions = [],
+                                         range: NSRange? = nil,
+                                         withTemplate templ: String = "") -> String {
+        return ColaExpression(pattern).stringByReplacingMatches(in: self,
+                                                                options: options,
+                                                                matchingOptions: matchingOptions,
+                                                                range: range,
+                                                                withTemplate: templ)
+    }
 }
 
 // MARK: - Case Operations

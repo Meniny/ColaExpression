@@ -22,3 +22,6 @@ public typealias ColaPattern = String
 
 /// Type alias of `NSRegularExpression.Options`
 public typealias ColaOptions = NSRegularExpression.Options
+
+/// Type alias of `NSRegularExpression.MatchingOptions`
+public typealias ColaMatchingOptions = NSRegularExpression.MatchingOptions

@@ -53,6 +53,9 @@
                 <a href="../Typealiases.html#/s:14ColaExpression6ColaEx">ColaEx</a>
               </li>
               <li class="nav-group-task">
+                <a href="../Typealiases.html#/s:14ColaExpression19ColaMatchingOptions">ColaMatchingOptions</a>
+              </li>
+              <li class="nav-group-task">
                 <a href="../Typealiases.html#/s:14ColaExpression11ColaOptions">ColaOptions</a>
               </li>
               <li class="nav-group-task">
@@ -586,6 +589,108 @@
                       <div>
                         <h4>Return Value</h4>
                         <p>A list of matches.</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FE14ColaExpressionSS24stringByReplacingMatchesFT4withSS7optionsVCSo19NSRegularExpression7Options15matchingOptionsVS0_15MatchingOptions5rangeGSqVSC8_NSRange_12withTemplateSS_SS"></a>
+                    <a name="//apple_ref/swift/Method/stringByReplacingMatches(with:options:matchingOptions:range:withTemplate:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FE14ColaExpressionSS24stringByReplacingMatchesFT4withSS7optionsVCSo19NSRegularExpression7Options15matchingOptionsVS0_15MatchingOptions5rangeGSqVSC8_NSRange_12withTemplateSS_SS">stringByReplacingMatches(with:options:matchingOptions:range:withTemplate:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Evaluates this string for all instances of a regular expression pattern and returns a new string of all matches repleaced.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">stringByReplacingMatches</span><span class="p">(</span><span class="n">with</span> <span class="nv">pattern</span><span class="p">:</span> <span class="kt"><a href="../Typealiases.html#/s:14ColaExpression7Pattern">Pattern</a></span><span class="p">,</span>
+                                         <span class="nv">options</span><span class="p">:</span> <span class="kt"><a href="../Typealiases.html#/s:14ColaExpression11ColaOptions">ColaOptions</a></span> <span class="o">=</span> <span class="p">[],</span>
+                                         <span class="nv">matchingOptions</span><span class="p">:</span> <span class="kt"><a href="../Typealiases.html#/s:14ColaExpression19ColaMatchingOptions">ColaMatchingOptions</a></span> <span class="o">=</span> <span class="p">[],</span>
+                                         <span class="nv">range</span><span class="p">:</span> <span class="kt">NSRange</span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">,</span>
+                                         <span class="n">withTemplate</span> <span class="nv">templ</span><span class="p">:</span> <span class="kt">String</span> <span class="o">=</span> <span class="s">""</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">String</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>pattern</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>A regular expression pattern</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>options</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>Regular expression options that are applied to the string during matching. Defaults to [].</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>matchingOptions</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>Matching options. Defaults to [].</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>range</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>Range. Defaults to <code>nil</code>.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>templ</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>Template. Defaults to an empty string(<code>&quot;&quot;</code>).</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>A new string with all matches repleaced.</p>
                       </div>
                     </section>
                   </div>
@@ -1732,7 +1837,7 @@ print(string.truncated(length: 8))
           </section>
         </section>
         <section id="footer">
-          <p>&copy; 2017 <a class="link" href="https://github.com/Meniny/ColaExpression" target="_blank" rel="external">Meniny</a>. All rights reserved. (Last updated: 2017-08-11)</p>
+          <p>&copy; 2017 <a class="link" href="https://github.com/Meniny/ColaExpression" target="_blank" rel="external">Meniny</a>. All rights reserved. (Last updated: 2017-08-15)</p>
           <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.8.2</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
         </section>
       </article>

@@ -68,6 +68,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let replaced2 = str.replaceOccurences(matches: pattern, with: replacement)
         print(replaced2)
         
+        let string = "<p class=\"some-class\">// Do <strong>any</strong> additional setup after loading the view, typically from a nib.</p>"
+        print("Original: \(string)")
+        print(string.stringByReplacingMatches(with: "<[^<>]+>"))
     }
 
     func applicationWillResignActive(_ application: UIApplication) {
