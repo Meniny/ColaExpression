@@ -93,10 +93,11 @@ public extension String {
     /// - Parameters:
     ///     - pattern: A regular expression pattern
     ///     - options: Regular expression options that are applied to the string during matching. Defaults to [].
+    ///   - matchingOptions: Matching options. Defaults to [].
     ///
     /// - Returns: A list of matches.
-    public func matches(pattern: Pattern, options: ColaOptions = []) -> [String] {
-        return ColaExpression(pattern).matches(of: self, options: options)
+    public func matches(pattern: Pattern, options: ColaOptions = [], matchingOptions: ColaMatchingOptions = []) -> [String] {
+        return ColaExpression(pattern).matches(of: self, options: options, matchingOptions: matchingOptions)
     }
     
     /// Evaluates a string for all instances of a regular expression pattern and returns the first of value of the list of matched strings for that string.
@@ -104,10 +105,11 @@ public extension String {
     /// - Parameters:
     ///     - string: The string that will be evaluated.
     ///     - options: Regular expression options that are applied to the string during matching. Defaults to [].
+    ///     - matchingOptions: Matching options. Defaults to [].
     ///
     /// - Returns: The first value of the list of matches.
-    public func firstMatch(pattern: Pattern, options: ColaOptions = []) -> String? {
-        return matches(pattern: self, options: options).first
+    public func firstMatch(pattern: Pattern, options: ColaOptions = [], matchingOptions: ColaMatchingOptions = []) -> String? {
+        return matches(pattern: self, options: options, matchingOptions: matchingOptions).first
     }
     
     /// Evaluates this string for all instances of a regular expression pattern and returns a list of matched ranges for that string.
@@ -115,10 +117,11 @@ public extension String {
     /// - Parameters:
     ///     - pattern: A regular expression pattern
     ///     - options: Regular expression options that are applied to the string during matching. Defaults to [].
+    ///     - matchingOptions: Matching options. Defaults to [].
     ///
     /// - Returns: A list of matches.
-    public func matchedRanges(with pattern: Pattern, options: ColaOptions = []) -> [Range<String.Index>] {
-        return ColaExpression(pattern).matchedRanges(of: self, options: options)
+    public func matchedRanges(with pattern: Pattern, options: ColaOptions = [], matchingOptions: ColaMatchingOptions = []) -> [Range<String.Index>] {
+        return ColaExpression(pattern).matchedRanges(of: self, options: options, matchingOptions: matchingOptions)
     }
     
     /// Evaluates this string for all instances of a regular expression pattern and returns a new string of all matches repleaced.

@@ -73,15 +73,16 @@ public extension ColaExpression {
     /// - Parameters:
     ///     - string: The string that will be evaluated.
     ///     - options: Regular expression options that are applied to the string during matching. Defaults to [].
+    ///   - matchingOptions: Matching options. Defaults to [].
     ///
     /// - Returns: A list of matches.
-    public func matchedRanges(of string: String, options: ColaOptions = []) -> [Range<String.Index>] {
+    public func matchedRanges(of string: String, options: ColaOptions = [], matchingOptions: ColaMatchingOptions = []) -> [Range<String.Index>] {
         let range = NSRange(location: 0, length: string.characters.count)
         guard let regex = try? NSRegularExpression(pattern: pattern, options: options) else {
             return []
         }
 
-        let matches = regex.matches(in: string, options: [], range: range)
+        let matches = regex.matches(in: string, options: matchingOptions, range: range)
 
         let ranges = matches.flatMap { (match) -> Range<String.Index>? in
             let nsRange = match.range
@@ -96,10 +97,11 @@ public extension ColaExpression {
     /// - Parameters:
     ///     - string: The string that will be evaluated.
     ///     - options: Regular expression options that are applied to the string during matching. Defaults to [].
+    ///   - matchingOptions: Matching options. Defaults to [].
     ///
     /// - Returns: A list of matches.
-    public func matches(of string: String, options: ColaOptions = []) -> [String] {
-        let ranges = matchedRanges(of: string)
+    public func matches(of string: String, options: ColaOptions = [], matchingOptions: ColaMatchingOptions = []) -> [String] {
+        let ranges = matchedRanges(of: string, options: options, matchingOptions: matchingOptions)
 
         var strings: [String] = []
         for range in ranges {
@@ -114,10 +116,11 @@ public extension ColaExpression {
     /// - Parameters:
     ///     - string: The string that will be evaluated.
     ///     - options: Regular expression options that are applied to the string during matching. Defaults to [].
+    ///   - matchingOptions: Matching options. Defaults to [].
     ///
     /// - Returns: The first value of the list of matches.
-    public func firstMatch(of string: String, options: ColaOptions = []) -> String? {
-        return matches(of: string, options: options).first
+    public func firstMatch(of string: String, options: ColaOptions = [], matchingOptions: ColaMatchingOptions = []) -> String? {
+        return matches(of: string, options: options, matchingOptions: matchingOptions).first
     }
 
     /// Tests a string to see if it matches the regular expression pattern.
@@ -125,10 +128,11 @@ public extension ColaExpression {
     /// - Parameters:
     ///     - string: The string that will be evaluated.
     ///     - options: Regular expression options that are applied to the string during matching. Defaults to [].
+    ///   - matchingOptions: Matching options. Defaults to [].
     /// 
     /// - Returns: `true` if string passes the test, otherwise, `false`.
-    public func isMatch(with string: String, options: ColaOptions = []) -> Bool {
-        return !matchedRanges(of: string, options: options).isEmpty
+    public func isMatch(with string: String, options: ColaOptions = [], matchingOptions: ColaMatchingOptions = []) -> Bool {
+        return !matchedRanges(of: string, options: options, matchingOptions: matchingOptions).isEmpty
     }
 
     /// Replace specific ranges in a string with a specific character.
