@@ -64,7 +64,7 @@ public extension ColaExpression {
         
         return regex.stringByReplacingMatches(in: string,
                                               options: matchingOptions,
-                                              range: range ?? NSMakeRange(0, string.characters.count),
+                                              range: range ?? NSMakeRange(0, string.count),
                                               withTemplate: templ)
     }
     
@@ -77,7 +77,7 @@ public extension ColaExpression {
     ///
     /// - Returns: A list of matches.
     public func matchedRanges(of string: String, options: ColaOptions = [], matchingOptions: ColaMatchingOptions = []) -> [Range<String.Index>] {
-        let range = NSRange(location: 0, length: string.characters.count)
+        let range = NSRange(location: 0, length: string.count)
         guard let regex = try? NSRegularExpression(pattern: pattern, options: options) else {
             return []
         }
@@ -105,7 +105,7 @@ public extension ColaExpression {
 
         var strings: [String] = []
         for range in ranges {
-            strings.append(string.substring(with: range))
+            strings.append(String(string[range]))
         }
 
         return strings

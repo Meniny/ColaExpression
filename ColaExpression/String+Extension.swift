@@ -252,7 +252,7 @@ public extension String {
     @discardableResult
     public func splitWordsByCase() -> String {
         var newStringArray: [String] = []
-        for character in ColaExpression.sanitze(string: self).characters {
+        for character in ColaExpression.sanitze(string: self) {
             if String(character) == String(character).uppercased() {
                 newStringArray.append(" ")
             }
@@ -276,7 +276,7 @@ public extension String {
     /// - Returns: The swap cased copy of the string.
     @discardableResult
     public func swapCased() -> String {
-        return characters.map({
+        return map({
             String($0).isLowercased() ? String($0).uppercased() : String($0).lowercased()
         }).joined()
     }
@@ -290,7 +290,7 @@ public extension String {
     /// Returns the first character of the string.
     ///
     ///     let string = "Hello World"
-    ///     print(string.first())
+    ///     print(string.firstCharacter())
     ///     // Prints "H"
     ///
     /// - Returns: The first character of the string.
@@ -302,13 +302,16 @@ public extension String {
     /// Returns the last character of the string.
     ///
     ///     let string = "Hello World"
-    ///     print(string.last())
+    ///     print(string.lastCharacter())
     ///     // Prints "d"
     ///
     /// - Returns: The last character of the string.
     @discardableResult
     public func lastCharacter() -> String {
-        return reversed().firstCharacter()
+        guard let c = reversed().last else {
+            return ""
+        }
+        return String(c)
     }
 
     /// Returns the latinized version of the string without diacritics.
@@ -341,19 +344,18 @@ public extension String {
     ///
     /// - Returns: The character count of the string.
     public func length() -> Int {
-        return characters.count
+        return count
     }
 
     /// Retuns the reversed version of the string.
     ///
     ///     let string = "Hello World"
-    ///     print(string.reversed())
+    ///     print(string.reversed)
     ///     // Prints "dlroW olleH"
     ///
     /// - Returns: The reversed copy of the string.
-    @discardableResult
-    public func reversed() -> String {
-        return String(characters.reversed())
+    public var reversed: String {
+        return String(reversed())
     }
 
     /// Returns the string without diacritics.
@@ -412,7 +414,7 @@ public extension String {
     ///   - token: The string used to pad the String. Must be 1 character in length. Defaults to a white space if the parameter is left blank.
     /// - Returns: The padded copy of the string.
     public func padding(length: Int, token: String = " ") -> String {
-        guard paddingConditionsSatisfied(tokenCount: token.characters.count, length: length) else { return self }
+        guard paddingConditionsSatisfied(tokenCount: token.count, length: length) else { return self }
         
         let delta = Int(ceil(Double(length-self.length())/2))
         return paddingLeft(length: length-delta, token: token).paddingRight(length: length, token: token)
@@ -439,10 +441,10 @@ public extension String {
     /// - Returns: The left-padded copy of the string.
     @discardableResult
     public func paddingLeft(length: Int, token: String = " ") -> String {
-        guard paddingConditionsSatisfied(tokenCount: token.characters.count, length: length) else { return self }
+        guard paddingConditionsSatisfied(tokenCount: token.count, length: length) else { return self }
         
         var s = self
-        repeat { s.insert(token.characters[token.startIndex], at: startIndex) } while s.characters.count < length
+        repeat { s.insert(token[token.startIndex], at: startIndex) } while s.count < length
         return s
     }
     
@@ -466,10 +468,10 @@ public extension String {
     /// - Returns: The right-padded copy of the string.
     @discardableResult
     public func paddingRight(length: Int, token: String = " ") -> String {
-        guard paddingConditionsSatisfied(tokenCount: token.characters.count, length: length) else { return self }
+        guard paddingConditionsSatisfied(tokenCount: token.count, length: length) else { return self }
         
         var s = self
-        repeat { s.insert(token.characters[token.startIndex], at: endIndex) } while s.characters.count < length
+        repeat { s.insert(token[token.startIndex], at: endIndex) } while s.count < length
         return s
     }
     
@@ -484,7 +486,7 @@ public extension String {
     ///   - length: The final length of the string.
     /// - Returns: True, if the string can be padded. Otherise, false.
     public func paddingConditionsSatisfied(tokenCount: Int, length: Int) -> Bool {
-        guard length > characters.count, tokenCount == 1 else {
+        guard length > count, tokenCount == 1 else {
             return false
         }
         return true
@@ -506,7 +508,7 @@ public extension String {
     /// - Returns: A prefixed copy of the string.
     @discardableResult
     public func trimLeft(byKeeping length: Int) -> String {
-        return String(characters.prefix(length))
+        return String(prefix(length))
     }
     
     /// Returns a suffixed version of the string.
@@ -519,7 +521,7 @@ public extension String {
     /// - Returns: A prefixed copy of the string.
     @discardableResult
     public func trimRight(byKeeping length: Int) -> String {
-        return String(characters.suffix(length))
+        return String(suffix(length))
     }
     
     /// Returns the left-trimmed version of the string.
@@ -534,10 +536,10 @@ public extension String {
     /// - Returns: The left-trimmed copy of the string.
     @discardableResult
     public func trimLeft(byRemoving length: Int) -> String {
-        guard characters.count - length > 0 else {
+        guard count - length > 0 else {
             return self
         }
-        return trimRight(byKeeping: characters.count - length)
+        return trimRight(byKeeping: count - length)
     }
     
     /// Returns the right-trimmed version of the string.
@@ -552,10 +554,10 @@ public extension String {
     /// - Returns: The right-trimmed copy of the string.
     @discardableResult
     public func trimRight(byRemoving length: Int) -> String {
-        guard characters.count - length > 0 else {
+        guard count - length > 0 else {
             return self
         }
-        return trimLeft(byKeeping: characters.count - length)
+        return trimLeft(byKeeping: count - length)
     }
     
     /// Returns the truncated string with an ellipsis.

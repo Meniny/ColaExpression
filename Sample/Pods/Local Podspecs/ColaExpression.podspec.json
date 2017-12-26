@@ -1,6 +1,6 @@
 {
   "name": "ColaExpression",
-  "version": "1.2.0",
+  "version": "2.0.0",
   "summary": "A Cross-Platform Regular Expression Library written in Swift.",
   "description": "ColaExpression is a Cross-Platform Regular Expression Library written in Swift.",
   "homepage": "https://github.com/Meniny/ColaExpression",
@@ -10,7 +10,7 @@
   },
   "source": {
     "git": "https://github.com/Meniny/ColaExpression.git",
-    "tag": "1.2.0"
+    "tag": "2.0.0"
   },
   "social_media_url": "http://meniny.cn/",
   "platforms": {

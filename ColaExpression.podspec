@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = "ColaExpression"
-  s.version          = "2.0.0"
+  s.version          = "2.1.0"
   s.summary          = "A Cross-Platform Regular Expression Library written in Swift."
   s.description      = <<-DESC
                         ColaExpression is a Cross-Platform Regular Expression Library written in Swift.
@@ -10,7 +10,7 @@ Pod::Spec.new do |s|
   s.license          = 'MIT'
   s.author           = { "Meniny" => "Meniny@qq.com" }
   s.source           = { :git => "https://github.com/Meniny/ColaExpression.git", :tag => s.version.to_s }
-  s.social_media_url = 'http://meniny.cn/'
+  s.social_media_url = 'https://meniny.cn/'
 
   s.ios.deployment_target = '9.0'
   s.osx.deployment_target = '10.11'
