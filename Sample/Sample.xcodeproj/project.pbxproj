@@ -13,6 +13,7 @@
 		5CF7971F1F18FBE90008F048 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5CF7971E1F18FBE90008F048 /* Assets.xcassets */; };
 		5CF797221F18FBE90008F048 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5CF797201F18FBE90008F048 /* LaunchScreen.storyboard */; };
 		5CF7972E1F18FC700008F048 /* ColaExpression.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5CF7972D1F18FC700008F048 /* ColaExpression.framework */; };
+		643A3065922BFA65E157A38E /* Pods_Sample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6A0B856BC7C9C6455B35C335 /* Pods_Sample.framework */; };
 		D548EFBDF361FF52926A620D /* Pods_ColaExpressionSample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E8A2575E57A790EE4EEF34D /* Pods_ColaExpressionSample.framework */; };
 /* End PBXBuildFile section */
 
@@ -20,7 +21,10 @@
 		06FC34A089A3AB6472385F6D /* Pods-ColaExpressionSample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ColaExpressionSample.release.xcconfig"; path = "Pods/Target Support Files/Pods-ColaExpressionSample/Pods-ColaExpressionSample.release.xcconfig"; sourceTree = "<group>"; };
 		0846C223679BDED069F4C09A /* Pods-ColaExpressionSample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ColaExpressionSample.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ColaExpressionSample/Pods-ColaExpressionSample.debug.xcconfig"; sourceTree = "<group>"; };
 		4E8A2575E57A790EE4EEF34D /* Pods_ColaExpressionSample.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ColaExpressionSample.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		5CF797141F18FBE90008F048 /* ColaExpressionSample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ColaExpressionSample.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		5C7289012020B18D001CB1E1 /* ColaExpression.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = ColaExpression.podspec; path = ../ColaExpression.podspec; sourceTree = "<group>"; };
+		5C7289022020B18D001CB1E1 /* LICENSE.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; name = LICENSE.md; path = ../LICENSE.md; sourceTree = "<group>"; };
+		5C7289032020B18D001CB1E1 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
+		5CF797141F18FBE90008F048 /* Sample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Sample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5CF797171F18FBE90008F048 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5CF797191F18FBE90008F048 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		5CF7971C1F18FBE90008F048 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -28,6 +32,9 @@
 		5CF797211F18FBE90008F048 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5CF797231F18FBE90008F048 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5CF7972D1F18FC700008F048 /* ColaExpression.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ColaExpression.framework; path = "../../../../Library/Developer/Xcode/DerivedData/ColaExpressionSample-adorafhjtthvvyadlidburavufjp/Build/Products/Debug-iphonesimulator/ColaExpression/ColaExpression.framework"; sourceTree = "<group>"; };
+		5F78F3C5CA0F193F5E69471A /* Pods-Sample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Sample.release.xcconfig"; path = "Pods/Target Support Files/Pods-Sample/Pods-Sample.release.xcconfig"; sourceTree = "<group>"; };
+		6A0B856BC7C9C6455B35C335 /* Pods_Sample.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Sample.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7FED7DE261E0F5203AD8F0DE /* Pods-Sample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Sample.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Sample/Pods-Sample.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -37,6 +44,7 @@
 			files = (
 				5CF7972E1F18FC700008F048 /* ColaExpression.framework in Frameworks */,
 				D548EFBDF361FF52926A620D /* Pods_ColaExpressionSample.framework in Frameworks */,
+				643A3065922BFA65E157A38E /* Pods_Sample.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -48,6 +56,8 @@
 			children = (
 				0846C223679BDED069F4C09A /* Pods-ColaExpressionSample.debug.xcconfig */,
 				06FC34A089A3AB6472385F6D /* Pods-ColaExpressionSample.release.xcconfig */,
+				7FED7DE261E0F5203AD8F0DE /* Pods-Sample.debug.xcconfig */,
+				5F78F3C5CA0F193F5E69471A /* Pods-Sample.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -55,6 +65,9 @@
 		5CF7970B1F18FBE90008F048 = {
 			isa = PBXGroup;
 			children = (
+				5C7289012020B18D001CB1E1 /* ColaExpression.podspec */,
+				5C7289022020B18D001CB1E1 /* LICENSE.md */,
+				5C7289032020B18D001CB1E1 /* README.md */,
 				5CF797161F18FBE90008F048 /* ColaExpressionSample */,
 				5CF797151F18FBE90008F048 /* Products */,
 				4CBBFBC444CC92DA9DAFCD47 /* Pods */,
@@ -65,7 +78,7 @@
 		5CF797151F18FBE90008F048 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				5CF797141F18FBE90008F048 /* ColaExpressionSample.app */,
+				5CF797141F18FBE90008F048 /* Sample.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -88,6 +101,7 @@
 			children = (
 				5CF7972D1F18FC700008F048 /* ColaExpression.framework */,
 				4E8A2575E57A790EE4EEF34D /* Pods_ColaExpressionSample.framework */,
+				6A0B856BC7C9C6455B35C335 /* Pods_Sample.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -95,9 +109,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		5CF797131F18FBE90008F048 /* ColaExpressionSample */ = {
+		5CF797131F18FBE90008F048 /* Sample */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 5CF797261F18FBE90008F048 /* Build configuration list for PBXNativeTarget "ColaExpressionSample" */;
+			buildConfigurationList = 5CF797261F18FBE90008F048 /* Build configuration list for PBXNativeTarget "Sample" */;
 			buildPhases = (
 				21E6449AF26C43158C54EB98 /* [CP] Check Pods Manifest.lock */,
 				5CF797101F18FBE90008F048 /* Sources */,
@@ -110,9 +124,9 @@
 			);
 			dependencies = (
 			);
-			name = ColaExpressionSample;
+			name = Sample;
 			productName = ColaExpressionSample;
-			productReference = 5CF797141F18FBE90008F048 /* ColaExpressionSample.app */;
+			productReference = 5CF797141F18FBE90008F048 /* Sample.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -132,7 +146,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 5CF7970F1F18FBE90008F048 /* Build configuration list for PBXProject "ColaExpressionSample" */;
+			buildConfigurationList = 5CF7970F1F18FBE90008F048 /* Build configuration list for PBXProject "Sample" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -145,7 +159,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				5CF797131F18FBE90008F048 /* ColaExpressionSample */,
+				5CF797131F18FBE90008F048 /* Sample */,
 			);
 		};
 /* End PBXProject section */
@@ -175,7 +189,7 @@
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-ColaExpressionSample-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-Sample-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -188,7 +202,7 @@
 			files = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-ColaExpressionSample/Pods-ColaExpressionSample-frameworks.sh",
+				"${SRCROOT}/Pods/Target Support Files/Pods-Sample/Pods-Sample-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/ColaExpression/ColaExpression.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
@@ -197,7 +211,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ColaExpressionSample/Pods-ColaExpressionSample-frameworks.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Sample/Pods-Sample-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		64125955ACB01CFB65FAB845 /* [CP] Copy Pods Resources */ = {
@@ -212,7 +226,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ColaExpressionSample/Pods-ColaExpressionSample-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Sample/Pods-Sample-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -356,11 +370,12 @@
 		};
 		5CF797271F18FBE90008F048 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 0846C223679BDED069F4C09A /* Pods-ColaExpressionSample.debug.xcconfig */;
+			baseConfigurationReference = 7FED7DE261E0F5203AD8F0DE /* Pods-Sample.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 63YL5QDMNS;
 				INFOPLIST_FILE = ColaExpressionSample/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = cn.meniny.ColaExpressionSample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -370,11 +385,12 @@
 		};
 		5CF797281F18FBE90008F048 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 06FC34A089A3AB6472385F6D /* Pods-ColaExpressionSample.release.xcconfig */;
+			baseConfigurationReference = 5F78F3C5CA0F193F5E69471A /* Pods-Sample.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 63YL5QDMNS;
 				INFOPLIST_FILE = ColaExpressionSample/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = cn.meniny.ColaExpressionSample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -385,7 +401,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		5CF7970F1F18FBE90008F048 /* Build configuration list for PBXProject "ColaExpressionSample" */ = {
+		5CF7970F1F18FBE90008F048 /* Build configuration list for PBXProject "Sample" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				5CF797241F18FBE90008F048 /* Debug */,
@@ -394,7 +410,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		5CF797261F18FBE90008F048 /* Build configuration list for PBXNativeTarget "ColaExpressionSample" */ = {
+		5CF797261F18FBE90008F048 /* Build configuration list for PBXNativeTarget "Sample" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				5CF797271F18FBE90008F048 /* Debug */,

@@ -11,6 +11,6 @@
 #endif
 
 
-FOUNDATION_EXPORT double Pods_ColaExpressionSampleVersionNumber;
-FOUNDATION_EXPORT const unsigned char Pods_ColaExpressionSampleVersionString[];
+FOUNDATION_EXPORT double Pods_SampleVersionNumber;
+FOUNDATION_EXPORT const unsigned char Pods_SampleVersionString[];
 

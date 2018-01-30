@@ -9,24 +9,13 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>Pods-ColaExpressionSample.xcscheme</key>
+		<key>Pods-Sample.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
-	<dict>
-		<key>299F4077C46D3F647488347614B8F5D4</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>5030CF6CEF2B89E7DC510E78C258C29B</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-	</dict>
+	<dict/>
 </dict>
 </plist>

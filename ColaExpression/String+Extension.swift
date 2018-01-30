@@ -109,7 +109,7 @@ public extension String {
     ///
     /// - Returns: The first value of the list of matches.
     public func firstMatch(pattern: Pattern, options: ColaOptions = [], matchingOptions: ColaMatchingOptions = []) -> String? {
-        return matches(pattern: self, options: options, matchingOptions: matchingOptions).first
+        return matches(pattern: pattern, options: options, matchingOptions: matchingOptions).first
     }
     
     /// Evaluates this string for all instances of a regular expression pattern and returns a list of matched ranges for that string.
