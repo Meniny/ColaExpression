@@ -1,10 +1,10 @@
 <p align="center">
   <img src="https://i.loli.net/2017/08/03/5982cf95ad718.png" alt="ColaExpression">
   <br/><a href="https://cocoapods.org/pods/ColaExpression">
-  <img alt="Version" src="https://img.shields.io/badge/version-2.1.1-brightgreen.svg">
+  <img alt="Version" src="https://img.shields.io/badge/version-2.2.0-brightgreen.svg">
   <img alt="Author" src="https://img.shields.io/badge/author-Meniny-blue.svg">
   <img alt="Build Passing" src="https://img.shields.io/badge/build-passing-brightgreen.svg">
-  <img alt="Swift" src="https://img.shields.io/badge/swift-4.0%2B-orange.svg">
+  <img alt="Swift" src="https://img.shields.io/badge/swift-5.0%2B-orange.svg">
   <br/>
   <img alt="Platforms" src="https://img.shields.io/badge/platform-macOS%20%7C%20iOS%20%7C%20watchOS%20%7C%20tvOS%20%7C%20Linux-lightgrey.svg">
   <img alt="MIT" src="https://img.shields.io/badge/license-MIT-blue.svg">

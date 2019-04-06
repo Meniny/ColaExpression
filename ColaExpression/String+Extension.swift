@@ -16,56 +16,56 @@ public extension String {
     ///
     /// - Parameter pattern: ColaExpression pattern
     /// - Returns: `true`, if matches. Otherwise, `false`.
-    public func isMatch(pattern: Pattern, options: ColaOptions = []) -> Bool {
+    func isMatch(pattern: Pattern, options: ColaOptions = []) -> Bool {
         return ColaExpression(pattern).isMatch(with: self, options: options)
     }
     
     /// A Boolean value indicating if all the characters are letters.
     ///
     /// - Returns: `true`, if all characters are letters. Otherwise, `false`.
-    public func isAlpha() -> Bool {
+    func isAlpha() -> Bool {
         return contains(characters: .letters)
     }
     
     /// A Boolean value indicating if all the characters are alphanumeric.
     ///
     /// - Returns: `true`, if all characters are alphanumeric. Otherwise, `false`.
-    public func isAlphanumeric() -> Bool {
+    func isAlphanumeric() -> Bool {
         return contains(characters: .alphanumerics)
     }
     
     /// A Boolean value indicating if the first characters in all of the words in the string are uppercased.
     ///
     /// - Returns: `true`, if the string is capitalized. Otherwise, `false`.
-    public func isCapitalized() -> Bool {
+    func isCapitalized() -> Bool {
         return self == capitalized()
     }
     
     /// A Boolean value indicating if the first characters in all of the words in the string are lowercased.
     ///
     /// - Returns: `true`, if first character is lowercased. Otherwise, `false`.
-    public func isDecapitalized() -> Bool {
+    func isDecapitalized() -> Bool {
         return self == decapitalized()
     }
     
     /// A Boolean value indicating if all the characters are lowercased.
     ///
     /// - Returns: `true`, if the string is not capitalized. Otherwise, `false`.
-    public func isLowercased() -> Bool {
+    func isLowercased() -> Bool {
         return self == lowercased()
     }
     
     /// A Boolean value indicating if all the characters are numbers.
     ///
     /// - Returns: `true`, if all characters are numbers. Otherwise, `false`.
-    public func isNumeric() -> Bool {
+    func isNumeric() -> Bool {
         return contains(characters: .decimalDigits)
     }
     
     /// A Boolean value indicating if all the characters are uppercased.
     ///
     /// - Returns: `true`, if all characters are uppercased. Otherwise, `false`.
-    public func isUppercased() -> Bool {
+    func isUppercased() -> Bool {
         return self == uppercased()
     }
     
@@ -79,7 +79,7 @@ public extension String {
     ///
     /// - Parameter characterSet: The `CharacterSet` used to test the string.
     /// - Returns: True, if all the characters in the string belong to the `CharacterSet`. Otherwise, false.
-    public func contains(characters characterSet: CharacterSet) -> Bool {
+    func contains(characters characterSet: CharacterSet) -> Bool {
         for scalar in unicodeScalars {
             guard characterSet.contains(scalar) else {
                 return false
@@ -96,7 +96,7 @@ public extension String {
     ///   - matchingOptions: Matching options. Defaults to [].
     ///
     /// - Returns: A list of matches.
-    public func matches(pattern: Pattern, options: ColaOptions = [], matchingOptions: ColaMatchingOptions = []) -> [String] {
+    func matches(pattern: Pattern, options: ColaOptions = [], matchingOptions: ColaMatchingOptions = []) -> [String] {
         return ColaExpression(pattern).matches(of: self, options: options, matchingOptions: matchingOptions)
     }
     
@@ -108,7 +108,7 @@ public extension String {
     ///     - matchingOptions: Matching options. Defaults to [].
     ///
     /// - Returns: The first value of the list of matches.
-    public func firstMatch(pattern: Pattern, options: ColaOptions = [], matchingOptions: ColaMatchingOptions = []) -> String? {
+    func firstMatch(pattern: Pattern, options: ColaOptions = [], matchingOptions: ColaMatchingOptions = []) -> String? {
         return matches(pattern: pattern, options: options, matchingOptions: matchingOptions).first
     }
     
@@ -120,7 +120,7 @@ public extension String {
     ///     - matchingOptions: Matching options. Defaults to [].
     ///
     /// - Returns: A list of matches.
-    public func matchedRanges(with pattern: Pattern, options: ColaOptions = [], matchingOptions: ColaMatchingOptions = []) -> [Range<String.Index>] {
+    func matchedRanges(with pattern: Pattern, options: ColaOptions = [], matchingOptions: ColaMatchingOptions = []) -> [Range<String.Index>] {
         return ColaExpression(pattern).matchedRanges(of: self, options: options, matchingOptions: matchingOptions)
     }
     
@@ -133,7 +133,7 @@ public extension String {
     ///   - range: Range. Defaults to `nil`.
     ///   - templ: Template. Defaults to an empty string(`""`).
     /// - Returns: A new string with all matches repleaced.
-    public func stringByReplacingMatches(with pattern: Pattern,
+    func stringByReplacingMatches(with pattern: Pattern,
                                          options: ColaOptions = [],
                                          matchingOptions: ColaMatchingOptions = [],
                                          range: NSRange? = nil,
@@ -158,7 +158,7 @@ public extension String {
     ///
     /// - Returns: A camel cased copy of the string.
     @discardableResult
-    public func camelCased() -> String {
+    func camelCased() -> String {
         return pascalCased().decapitalized()
     }
     
@@ -172,7 +172,7 @@ public extension String {
     ///
     /// - Returns: A capitalized copy of the string.
     @discardableResult
-    public func capitalized() -> String {
+    func capitalized() -> String {
         let ranges = ColaExpression.firstCharacterPattern.matchedRanges(of: self)
         
         var newString = self
@@ -193,7 +193,7 @@ public extension String {
     ///
     /// - Returns: A decapitalized copy of the string.
     @discardableResult
-    public func decapitalized() -> String {
+    func decapitalized() -> String {
         let ranges = ColaExpression.firstCharacterPattern.matchedRanges(of: self)
         
         var newString = self
@@ -214,7 +214,7 @@ public extension String {
     ///
     /// - Returns: The kebabg cased copy of the string.
     @discardableResult
-    public func kebabCased() -> String {
+    func kebabCased() -> String {
         return ColaExpression.sanitze(string: self).splitWordsByCase().replacingOccurrences(of: " ", with: "-").lowercased()
     }
     
@@ -226,7 +226,7 @@ public extension String {
     ///
     /// - Returns: A pascal cased copy of the string.
     @discardableResult
-    public func pascalCased() -> String {
+    func pascalCased() -> String {
         return ColaExpression.sanitze(string: self).splitWordsByCase().capitalized().components(separatedBy: .whitespaces).joined()
     }
     
@@ -238,7 +238,7 @@ public extension String {
     ///
     /// - Returns: The snaked cased copy of the string.
     @discardableResult
-    public func snakeCased() -> String {
+    func snakeCased() -> String {
         return ColaExpression.sanitze(string: self).splitWordsByCase().replacingOccurrences(of: " ", with: "_").lowercased()
     }
     
@@ -250,7 +250,7 @@ public extension String {
     ///
     /// - Returns: A new string where each word in the original string is delimited by a whitespace.
     @discardableResult
-    public func splitWordsByCase() -> String {
+    func splitWordsByCase() -> String {
         var newStringArray: [String] = []
         for character in ColaExpression.sanitze(string: self) {
             if String(character) == String(character).uppercased() {
@@ -275,7 +275,7 @@ public extension String {
     ///
     /// - Returns: The swap cased copy of the string.
     @discardableResult
-    public func swapCased() -> String {
+    func swapCased() -> String {
         return map({
             String($0).isLowercased() ? String($0).uppercased() : String($0).lowercased()
         }).joined()
@@ -295,7 +295,7 @@ public extension String {
     ///
     /// - Returns: The first character of the string.
     @discardableResult
-    public func firstCharacter() -> String {
+    func firstCharacter() -> String {
         return String(describing: self[startIndex])
     }
 
@@ -307,7 +307,7 @@ public extension String {
     ///
     /// - Returns: The last character of the string.
     @discardableResult
-    public func lastCharacter() -> String {
+    func lastCharacter() -> String {
         guard let c = reversed().last else {
             return ""
         }
@@ -322,7 +322,7 @@ public extension String {
     ///
     /// - Returns: The latinized version of the string without diacritics.
     @discardableResult
-    public func latinized() -> String {
+    func latinized() -> String {
         #if !os(Linux)
             if #available(iOS 9.0, macOS 10.11, tvOS 9.0, watchOS 3.0, *) {
                 return (applyingTransform(.toLatin, reverse: false) ?? self).withoutAccents()
@@ -343,7 +343,7 @@ public extension String {
     ///     // Prints 11
     ///
     /// - Returns: The character count of the string.
-    public func length() -> Int {
+    func length() -> Int {
         return count
     }
 
@@ -354,7 +354,7 @@ public extension String {
     ///     // Prints "dlroW olleH"
     ///
     /// - Returns: The reversed copy of the string.
-    public var reversed: String {
+    var reversed: String {
         return String(reversed())
     }
 
@@ -366,7 +366,7 @@ public extension String {
     ///
     /// - Returns: The string without diacritics.
     @discardableResult
-    public func withoutAccents() -> String {
+    func withoutAccents() -> String {
         #if !os(Linux)
             if #available(iOS 9.0, macOS 10.11, tvOS 9.0, watchOS 2.0, *) {
                 return (applyingTransform(.stripCombiningMarks, reverse: false) ?? self)
@@ -385,7 +385,7 @@ public extension String {
     ///   - string: The string that will be manipulated.
     ///   - character: The character that is injected in certain ranges within the original string.
     /// - Returns: A new string based on the old string, but with specific ranges containing a different character.
-    public func replaceOccurences(matches pattern: Pattern, with character: String) -> String {
+    func replaceOccurences(matches pattern: Pattern, with character: String) -> String {
         return ColaExpression(pattern).replaceOccurences(in: self, with: character)
     }
     
@@ -413,7 +413,7 @@ public extension String {
     ///   - length: The final length of your string. If the provided length is less than or equal to the original string, the original string is returned. If the the sum-total of characters added is odd, the left side of the string will have one less instance of the token.
     ///   - token: The string used to pad the String. Must be 1 character in length. Defaults to a white space if the parameter is left blank.
     /// - Returns: The padded copy of the string.
-    public func padding(length: Int, token: String = " ") -> String {
+    func padding(length: Int, token: String = " ") -> String {
         guard paddingConditionsSatisfied(tokenCount: token.count, length: length) else { return self }
         
         let delta = Int(ceil(Double(length-self.length())/2))
@@ -440,7 +440,7 @@ public extension String {
     ///   - token: The string used to pad the String. Must be 1 character in length. Defaults to a white space if the parameter is left blank.
     /// - Returns: The left-padded copy of the string.
     @discardableResult
-    public func paddingLeft(length: Int, token: String = " ") -> String {
+    func paddingLeft(length: Int, token: String = " ") -> String {
         guard paddingConditionsSatisfied(tokenCount: token.count, length: length) else { return self }
         
         var s = self
@@ -467,7 +467,7 @@ public extension String {
     ///   - token: The string used to pad the String. Must be 1 character in length. Defaults to a white space if the parameter is left blank.
     /// - Returns: The right-padded copy of the string.
     @discardableResult
-    public func paddingRight(length: Int, token: String = " ") -> String {
+    func paddingRight(length: Int, token: String = " ") -> String {
         guard paddingConditionsSatisfied(tokenCount: token.count, length: length) else { return self }
         
         var s = self
@@ -485,7 +485,7 @@ public extension String {
     ///   - token: The token that will be used for padding.
     ///   - length: The final length of the string.
     /// - Returns: True, if the string can be padded. Otherise, false.
-    public func paddingConditionsSatisfied(tokenCount: Int, length: Int) -> Bool {
+    func paddingConditionsSatisfied(tokenCount: Int, length: Int) -> Bool {
         guard length > count, tokenCount == 1 else {
             return false
         }
@@ -507,7 +507,7 @@ public extension String {
     /// - Parameter length: The length of the string that you'd like to return, starting at the beginning of the string. If the provided length is greater than the original string, the original string is returned.
     /// - Returns: A prefixed copy of the string.
     @discardableResult
-    public func trimLeft(byKeeping length: Int) -> String {
+    func trimLeft(byKeeping length: Int) -> String {
         return String(prefix(length))
     }
     
@@ -520,7 +520,7 @@ public extension String {
     /// - Parameter length: The length of the string that you'd like to return, starting at the end of the string. If the provided length is greater than the original string, the original string is returned.
     /// - Returns: A prefixed copy of the string.
     @discardableResult
-    public func trimRight(byKeeping length: Int) -> String {
+    func trimRight(byKeeping length: Int) -> String {
         return String(suffix(length))
     }
     
@@ -535,7 +535,7 @@ public extension String {
     /// - Parameter length: The number of characters to trim from the beginning of the string. If the provided length is greater than the original string, the original string is returned.
     /// - Returns: The left-trimmed copy of the string.
     @discardableResult
-    public func trimLeft(byRemoving length: Int) -> String {
+    func trimLeft(byRemoving length: Int) -> String {
         guard count - length > 0 else {
             return self
         }
@@ -553,7 +553,7 @@ public extension String {
     /// - Parameter length: The number of characters to trim from the end of the string. If the provided length is greater than the original string, the original string is returned.
     /// - Returns: The right-trimmed copy of the string.
     @discardableResult
-    public func trimRight(byRemoving length: Int) -> String {
+    func trimRight(byRemoving length: Int) -> String {
         guard count - length > 0 else {
             return self
         }
@@ -571,7 +571,7 @@ public extension String {
     /// - Parameter length: The final length of the string, which includes the ellipsis: `...`).
     /// - Returns: The truncated copy of the string.
     @discardableResult
-    public func truncated(length: Int) -> String {
+    func truncated(length: Int) -> String {
         let ellipsis = "..."
         
         let delta = self.length() - length

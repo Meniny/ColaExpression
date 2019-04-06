@@ -53,7 +53,7 @@ public extension ColaExpression {
     ///   - range: Range. Defaults to `nil`.
     ///   - templ: Template. Defaults to an empty string(`""`).
     /// - Returns: A new string with all matches repleaced.
-    public func stringByReplacingMatches(in string: String,
+    func stringByReplacingMatches(in string: String,
                                          options: ColaOptions = [],
                                          matchingOptions: ColaMatchingOptions = [],
                                          range: NSRange? = nil,
@@ -76,7 +76,7 @@ public extension ColaExpression {
     ///   - matchingOptions: Matching options. Defaults to [].
     ///
     /// - Returns: A list of matches.
-    public func matchedRanges(of string: String, options: ColaOptions = [], matchingOptions: ColaMatchingOptions = []) -> [Range<String.Index>] {
+    func matchedRanges(of string: String, options: ColaOptions = [], matchingOptions: ColaMatchingOptions = []) -> [Range<String.Index>] {
         let range = NSRange(location: 0, length: string.count)
         guard let regex = try? NSRegularExpression(pattern: pattern, options: options) else {
             return []
@@ -84,7 +84,7 @@ public extension ColaExpression {
 
         let matches = regex.matches(in: string, options: matchingOptions, range: range)
 
-        let ranges = matches.flatMap { (match) -> Range<String.Index>? in
+        let ranges = matches.compactMap { (match) -> Range<String.Index>? in
             let nsRange = match.range
             return nsRange.range(of: string)
         }
@@ -100,7 +100,7 @@ public extension ColaExpression {
     ///   - matchingOptions: Matching options. Defaults to [].
     ///
     /// - Returns: A list of matches.
-    public func matches(of string: String, options: ColaOptions = [], matchingOptions: ColaMatchingOptions = []) -> [String] {
+    func matches(of string: String, options: ColaOptions = [], matchingOptions: ColaMatchingOptions = []) -> [String] {
         let ranges = matchedRanges(of: string, options: options, matchingOptions: matchingOptions)
 
         var strings: [String] = []
@@ -119,7 +119,7 @@ public extension ColaExpression {
     ///   - matchingOptions: Matching options. Defaults to [].
     ///
     /// - Returns: The first value of the list of matches.
-    public func firstMatch(of string: String, options: ColaOptions = [], matchingOptions: ColaMatchingOptions = []) -> String? {
+    func firstMatch(of string: String, options: ColaOptions = [], matchingOptions: ColaMatchingOptions = []) -> String? {
         return matches(of: string, options: options, matchingOptions: matchingOptions).first
     }
 
@@ -131,7 +131,7 @@ public extension ColaExpression {
     ///   - matchingOptions: Matching options. Defaults to [].
     /// 
     /// - Returns: `true` if string passes the test, otherwise, `false`.
-    public func isMatch(with string: String, options: ColaOptions = [], matchingOptions: ColaMatchingOptions = []) -> Bool {
+    func isMatch(with string: String, options: ColaOptions = [], matchingOptions: ColaMatchingOptions = []) -> Bool {
         return !matchedRanges(of: string, options: options, matchingOptions: matchingOptions).isEmpty
     }
 
@@ -141,7 +141,7 @@ public extension ColaExpression {
     ///   - string: The string that will be manipulated.
     ///   - character: The character that is injected in certain ranges within the original string.
     /// - Returns: A new string based on the old string, but with specific ranges containing a different character.
-    public func replaceOccurences(in string: String, with character: String) -> String {
+    func replaceOccurences(in string: String, with character: String) -> String {
         let ranges = ColaExpression(pattern).matchedRanges(of: string)
         
         var newString = string
@@ -156,7 +156,7 @@ public extension ColaExpression {
     ///
     /// - Parameter string: The string to evaluate.
     /// - Returns: An array containing the first letter of each word in the provided string.
-    public static func firstCharacterOfEachWord(in string: String) -> [String] {
+    static func firstCharacterOfEachWord(in string: String) -> [String] {
         return ColaExpression.firstCharacterPattern.matches(of: string)
     }
     
@@ -164,7 +164,7 @@ public extension ColaExpression {
     ///
     /// - Parameter string: The string to evaluate.
     /// - Returns: An array containing the last letter of each word in the provided string.
-    public static func lastCharacterOfEachWord(in string: String) -> [String] {
+    static func lastCharacterOfEachWord(in string: String) -> [String] {
         return ColaExpression.lastCharacterPattern.matches(of: string)
     }
     
@@ -174,7 +174,7 @@ public extension ColaExpression {
     ///     - email: The string that needs to be evaluated.
     ///
     /// - Returns: `true` if `string` is a valid email address, otherwise `false`.
-    public static func check(email: String) -> Bool {
+    static func check(email: String) -> Bool {
         return ColaExpression.emailPattern.isMatch(with: email)
     }
     
@@ -182,7 +182,7 @@ public extension ColaExpression {
     ///
     /// - Parameter string: The string that should be sanitized.
     /// - Returns: The sanitized string.
-    public static func sanitze(string: String) -> String {
+    static func sanitze(string: String) -> String {
         return ColaExpression.nonAlphanumericPattern.replaceOccurences(in: string, with: " ").trimmingCharacters(in: .whitespacesAndNewlines)
     }
     

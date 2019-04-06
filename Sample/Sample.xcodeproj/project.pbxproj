@@ -14,14 +14,13 @@
 		5CF797221F18FBE90008F048 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5CF797201F18FBE90008F048 /* LaunchScreen.storyboard */; };
 		5CF7972E1F18FC700008F048 /* ColaExpression.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5CF7972D1F18FC700008F048 /* ColaExpression.framework */; };
 		643A3065922BFA65E157A38E /* Pods_Sample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6A0B856BC7C9C6455B35C335 /* Pods_Sample.framework */; };
-		D548EFBDF361FF52926A620D /* Pods_ColaExpressionSample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E8A2575E57A790EE4EEF34D /* Pods_ColaExpressionSample.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		06FC34A089A3AB6472385F6D /* Pods-ColaExpressionSample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ColaExpressionSample.release.xcconfig"; path = "Pods/Target Support Files/Pods-ColaExpressionSample/Pods-ColaExpressionSample.release.xcconfig"; sourceTree = "<group>"; };
 		0846C223679BDED069F4C09A /* Pods-ColaExpressionSample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ColaExpressionSample.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ColaExpressionSample/Pods-ColaExpressionSample.debug.xcconfig"; sourceTree = "<group>"; };
 		4E8A2575E57A790EE4EEF34D /* Pods_ColaExpressionSample.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ColaExpressionSample.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		5C7289012020B18D001CB1E1 /* ColaExpression.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = ColaExpression.podspec; path = ../ColaExpression.podspec; sourceTree = "<group>"; };
+		5C7289012020B18D001CB1E1 /* ColaExpression.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = ColaExpression.podspec; path = ../ColaExpression.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		5C7289022020B18D001CB1E1 /* LICENSE.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; name = LICENSE.md; path = ../LICENSE.md; sourceTree = "<group>"; };
 		5C7289032020B18D001CB1E1 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		5CF797141F18FBE90008F048 /* Sample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Sample.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -43,7 +42,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				5CF7972E1F18FC700008F048 /* ColaExpression.framework in Frameworks */,
-				D548EFBDF361FF52926A620D /* Pods_ColaExpressionSample.framework in Frameworks */,
 				643A3065922BFA65E157A38E /* Pods_Sample.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -118,7 +116,6 @@
 				5CF797111F18FBE90008F048 /* Frameworks */,
 				5CF797121F18FBE90008F048 /* Resources */,
 				4D066DAA5776D8CC7C9CF352 /* [CP] Embed Pods Frameworks */,
-				64125955ACB01CFB65FAB845 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -136,19 +133,20 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0830;
-				LastUpgradeCheck = 0920;
+				LastUpgradeCheck = 1020;
 				ORGANIZATIONNAME = Meniny;
 				TargetAttributes = {
 					5CF797131F18FBE90008F048 = {
 						CreatedOnToolsVersion = 8.3.3;
 						DevelopmentTeam = 63YL5QDMNS;
+						LastSwiftMigration = 1020;
 						ProvisioningStyle = Automatic;
 					};
 				};
 			};
 			buildConfigurationList = 5CF7970F1F18FBE90008F048 /* Build configuration list for PBXProject "Sample" */;
 			compatibilityVersion = "Xcode 3.2";
-			developmentRegion = English;
+			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
@@ -202,7 +200,7 @@
 			files = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-Sample/Pods-Sample-frameworks.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-Sample/Pods-Sample-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/ColaExpression/ColaExpression.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
@@ -211,22 +209,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Sample/Pods-Sample-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		64125955ACB01CFB65FAB845 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Sample/Pods-Sample-resources.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Sample/Pods-Sample-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -267,6 +250,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
@@ -277,6 +261,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -284,6 +269,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -323,6 +309,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
@@ -333,6 +320,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -340,6 +328,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -379,7 +368,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = cn.meniny.ColaExpressionSample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
 		};
@@ -394,7 +383,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = cn.meniny.ColaExpressionSample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
 		};
